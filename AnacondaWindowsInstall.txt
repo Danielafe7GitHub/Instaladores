@@ -1,0 +1,56 @@
+toca 16 notes in 42 tempo y tu teoria de notas esta comprobada!!!
+toca peter pan para pulir la idea
+a cada measure de 16 en total se le asigna uno de los 5 values
+ahora q dividiste pro paplabras se es pera mejores resultados
+y es asi como logras la combinacion de notas?? .... wait
+
+Son 16 measures
+En un measure entra
+4 negras
+2 medias 
+1 blanca 
+8 octavas 
+16 16
+Haz una prueba:
+coge un texto, dividelo en 16 y grafica ... 
+ve donde hay mas alegria etc...
+
+
+Instalar Anaconda Windows
+Fuente: https://www.youtube.com/watch?v=b_xBT36HJAU
+
+Descargamos conda de :https://www.anaconda.com/download/#windows
+Instalamos .... Marcamos SI en add path como en el video 
+Abrimos anaconda
+Creamo un ambiente
+abrimo CMD
+conda creare --name Ia
+conda activate Ia
+//Te aparecerá algo asi:
+(Ia)
+En anaconda escogemos el ambiente Ia
+Instalamos (Juoyter lab : q instala notebook) y Abrimos jupyter notebook 
+Para instalar paquetes:
+Dentro del ambiente
+conda install numpy
+conda install matplotlib
+
+
+
+//Por ejemplo, tenemos un ambiente aparte para el musicalizador
+Recién allí instalamos NLTK
+conda activate NRC
+conda install -c anaconda nltk 
+
+Luego en el ippython:
+import nltk
+nltk.download('punkt')
+print("done...")
+
+import nltk
+nltk.download('stopwords')
+print("done...")
+
+//Y los borras del ipython , solo se compilan una vez
+
+//Para hacer uso de tokenize
