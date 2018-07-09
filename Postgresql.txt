@@ -1,0 +1,42 @@
+﻿Postgresql por consola WINDOWS
+--Abres Power Shell
+cd  C:\Program Files\PostgreSQL\9.6\bin> .\psql.exe -i -u psql
+.\psql.exe -U postgres -d postgres
+--> Constraseña :ucsp
+CREATE DATABASE dblink;
+ \c dblink
+create table tmp1 (id serial, nombre text, num integer);
+select * from tmp1;
+
+insert into tmp1 (nombre, num) values ('Luke',10);
+insert into tmp1 (nombre, num) values ('SKY',1);
+insert into tmp1 (nombre, num) values ('Walker',2);
+insert into tmp1 (nombre, num) values ('Dark',2);
+insert into tmp1 (nombre, num) values ('Leia',4);
+
+#Creando conección DBLink para hacer consultas remotas
+
+-- enable dblink support
+CREATE EXTENSION dblink;
+
+-- create the connection
+SELECT dblink_connect('myconn', 'dbname=db_link3');
+
+
+--Consulta para conectarnos a la bd de otra pc (User y pass  de quien te quieres conectar)
+SELECT id FROM dblink ('dbname=db_link3 port=5432 host=192.168.1.12 user=postgres password=123456', 'select id from tmp3')AS remote (id int);
+
+
+--Configuraciones 
+En el archivo postgresql.conf en “CONNECTIONS AND AUTHENTICATION”se agrega:
+listen_addresses = '*'
+
+En el archivo pg_hba.conf al final se agrega: host all all 0.0.0.0/0 trust (Nota: No poner esto si se
+piensa en ponerlo en producción)
+	
+ .\pg_ctl.exe -D "C:/Program Files/PostgreSQL/9.6/data" restart
+.\pg_ctl.exe -D "C:/Program Files/PostgreSQL/9.6/data" stop
+.\pg_ctl.exe -D "C:/Program Files/PostgreSQL/9.6/data" start
+
+Reiniar PC
+

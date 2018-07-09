@@ -1,0 +1,111 @@
+Ros Curso En ingles: Ros in five days: https://www.youtube.com/watch?v=DBFYZRMLr70&list=PLK0b4e05LnzZWg_7QrIQWyvSPX2WN2ncc
+
+Ros curso en español 
+
+
+
+
+Fuente: https://www.youtube.com/watch?v=f7b5tSZW1Ig
+
+Usando simulador Virtual:
+Te registras y empeizas a usarlo :
+https://rds.theconstructsim.com/simulations/
+En proyector publicos busca "dron"
+Abre el poryecto y en la pestaña "simulations" escoge Parrot AR Drone
+Todos los paquetes estarás instalados allí.
+Escribe el comando : Para hacerlo despegar:
+
+Aprende ROS en este curso:
+https://www.robotigniteacademy.com/en/course/ros-basics-in-5-days_1_0/
+
+
+
+
+
+
+Instalación de Ros
+Pre-requisitos:
+1. Instalar Ununtu 14.05
+2. Instalar Ros índigo que es el paquete complatiple con esta versión de Ubuntu
+Fuente: https://edu.gaitech.hk/getting_started/get-started.html
+Paso 1. Instalar Ros índigo: Fuente:  http://wiki.ros.org/indigo/Installation/Ubuntu
+En terminal:
+sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+
+sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116
+
+sudo apt-get update
+
+sudo apt-get install ros-indigo-desktop-full
+
+sudo rosdep init
+rosdep update
+
+Paso2. Configurando el ambiente
+echo "source /opt/ros/indigo/setup.bash" >> ~/.bashrc
+source ~/.bashrc
+sudo apt-get install python-rosinstall
+
+Paso 3. Managing Your Environment
+printenv | grep ROS
+mkdir -p ~/catkin_ws/src
+cd ~/catkin_ws/
+catkin_make
+source devel/setup.bash
+
+
+Paso 4: Simulation of AR Parrot 2
+//Instalando paquetes necesarios  
+//ardrone_autonomy
+cd ~/catkin_ws/src
+
+git clone https://github.com/AutonomyLab/ardrone_autonomy.git -b indigo-devel
+
+cd ~/catkin_ws
+
+rosdep install --from-paths src -i
+
+catkin_make
+
+// tum_simulator
+cd ~/catkin_ws/src
+git clone https://github.com/AutonomyLab/ardrone_autonomy.git -b indigo-devel
+cd ~/catkin_ws
+rosdep install --from-paths src -i
+catkin_make
+
+# cd into ros root dir
+roscd
+
+# clone repository
+git clone https://github.com/tum-vision/tum_simulator.git
+
+# add to ros path (if required)
+export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:`pwd`/tum_simulator
+
+# build package
+rosmake cvg_sim_gazebo_plugins
+rosmake message_to_tf
+
+
+Paso 5. Testing the simulator: Fuente: https://edu.gaitech.hk/drones/ar_parrot_2/simulation-ar-parrot-2.html
+catkin_create_pkg drone_application std_msgs rospy roscpp
+//Dentro de la carpeta catkin_ws se crea otra llamada drone_application
+//Allí adentro crear carpeta launch y crear un archivo .test_simulator.launch 
+//Dentro del archivo poner:
+<launch>
+        <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="world_name" value="$(find cvg_sim_gazebo)/worlds/ardrone_testworld.world"/>
+        </include>
+        <include file="$(find cvg_sim_gazebo)/launch/spawn_quadrotor.launch" >
+        <arg name="model" value="$(find cvg_sim_gazebo)/urdf/quadrotor_sensors.urdf.xacro"/>
+        </include>
+</launch>
+
+//Sales a la carpeta catkin_ws y allí abres terminal
+catkin_make 
+//En terminal 
+roslaunch drone_application test_simulator.launch
+
+
+ORSF
