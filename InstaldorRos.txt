@@ -1,6 +1,6 @@
 Ros Curso En ingles: Ros in five days: https://www.youtube.com/watch?v=DBFYZRMLr70&list=PLK0b4e05LnzZWg_7QrIQWyvSPX2WN2ncc
 
-Ros curso en español 
+Ros curso en espaÃ±ol 
 
 
 
@@ -11,8 +11,8 @@ Usando simulador Virtual:
 Te registras y empeizas a usarlo :
 https://rds.theconstructsim.com/simulations/
 En proyector publicos busca "dron"
-Abre el poryecto y en la pestaña "simulations" escoge Parrot AR Drone
-Todos los paquetes estarás instalados allí.
+Abre el poryecto y en la pestaÃ±a "simulations" escoge Parrot AR Drone
+Todos los paquetes estarÃ¡s instalados allÃ­.
 Escribe el comando : Para hacerlo despegar:
 
 Aprende ROS en este curso:
@@ -23,12 +23,12 @@ https://www.robotigniteacademy.com/en/course/ros-basics-in-5-days_1_0/
 
 
 
-Instalación de Ros
+InstalaciÃ³n de Ros
 Pre-requisitos:
 1. Instalar Ununtu 14.05
-2. Instalar Ros índigo que es el paquete complatiple con esta versión de Ubuntu
+2. Instalar Ros Ã­ndigo que es el paquete complatiple con esta versiÃ³n de Ubuntu
 Fuente: https://edu.gaitech.hk/getting_started/get-started.html
-Paso 1. Instalar Ros índigo: Fuente:  http://wiki.ros.org/indigo/Installation/Ubuntu
+Paso 1. Instalar Ros Ã­ndigo: Fuente:  http://wiki.ros.org/indigo/Installation/Ubuntu
 En terminal:
 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
 
@@ -67,6 +67,16 @@ rosdep install --from-paths src -i
 
 catkin_make
 
+
+//Crear un paquete
+cd catkin_ws
+cd src
+catkin_create_pkg nombreCARPETA std_msgs rospy roscpp
+//Copiar dentro de movement/src EL archivo .py
+source devel/setup.bash 
+//correr cod
+rosrun movement name_codigo.py
+
 // tum_simulator
 cd ~/catkin_ws/src
 git clone https://github.com/AutonomyLab/ardrone_autonomy.git -b indigo-devel
@@ -91,7 +101,7 @@ rosmake message_to_tf
 Paso 5. Testing the simulator: Fuente: https://edu.gaitech.hk/drones/ar_parrot_2/simulation-ar-parrot-2.html
 catkin_create_pkg drone_application std_msgs rospy roscpp
 //Dentro de la carpeta catkin_ws se crea otra llamada drone_application
-//Allí adentro crear carpeta launch y crear un archivo .test_simulator.launch 
+//AllÃ­ adentro crear carpeta launch y crear un archivo .test_simulator.launch 
 //Dentro del archivo poner:
 <launch>
         <include file="$(find gazebo_ros)/launch/empty_world.launch">
@@ -102,7 +112,7 @@ catkin_create_pkg drone_application std_msgs rospy roscpp
         </include>
 </launch>
 
-//Sales a la carpeta catkin_ws y allí abres terminal
+//Sales a la carpeta catkin_ws y allÃ­ abres terminal
 catkin_make 
 //En terminal 
 roslaunch drone_application test_simulator.launch
