@@ -82,6 +82,10 @@ cd catkin_ws
 cd src
 catkin_create_pkg nombreCARPETA std_msgs rospy roscpp
 //Copiar dentro de movement/src EL archivo .py
+//Actualizamos
+cd ..
+catkin_make
+
 source devel/setup.bash 
 //correr cod
 rosrun movement name_codigo.py
