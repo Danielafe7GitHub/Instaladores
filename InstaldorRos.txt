@@ -67,6 +67,15 @@ rosdep install --from-paths src -i
 
 catkin_make
 
+Paso 4 Alternativo:
+Si se desea instalar ardrone con kinetic Fuente: http://sites.bu.edu/uav/extra/installing-ros-kinetic-and-connection-to-parrot-drone/
+
+cd ~/catkin_ws/src
+git clone https://github.com/AutonomyLab/ardrone_autonomy
+cd ..
+rosdep install --from-paths src --ignore-src
+catkin_make
+
 
 //Crear un paquete
 cd catkin_ws
@@ -76,6 +85,9 @@ catkin_create_pkg nombreCARPETA std_msgs rospy roscpp
 source devel/setup.bash 
 //correr cod
 rosrun movement name_codigo.py
+//Si te da un msg como no es ni un archivo .. Le damos permisos al file
+cd catkin_ws/src/movement/src
+chmod +x name_codigo.py
 
 // tum_simulator
 cd ~/catkin_ws/src
