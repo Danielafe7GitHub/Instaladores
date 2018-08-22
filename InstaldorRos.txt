@@ -134,4 +134,19 @@ catkin_make
 roslaunch drone_application test_simulator.launch
 
 
+//Instalar Turtlebot Simulator
+//Indigo Fuente: http://wiki.ros.org/turtlebot/Tutorials/indigo/Turtlebot%20Installation
+
+//Kinetic Fuente: https://github.com/turtlebot/turtlebot/issues/236
+ros-kinetic-turtlebot-gazebo
+source /opt/ros/kinetic/setup.bash
+
+En ambos casos, para abrir simulador
+//En una terminal 
+roscore
+//En otra 
+roslaunch turtlebot_gazebo turtlebot_world.launch
+//Solo en indigo , en otra terminak 
+roslaunch turtlebot_teleop keyboard_teleop.launch
+
 ORSF
