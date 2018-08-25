@@ -92,11 +92,12 @@ rosrun movement name_codigo.py
 //Si te da un msg como no es ni un archivo .. Le damos permisos al file
 cd catkin_ws/src/movement/src
 chmod +x name_codigo.py
+
 //Si no queremos hacer   source devel/setup.bash cada rado 
 //abre terminal 
 gedit ~/.bashrc
 //añade al ultimo
-source devel/setup.bash
+source ~/catkin_ws/devel/setup.bash
 //guardar
 source ~/.bashrc
 
