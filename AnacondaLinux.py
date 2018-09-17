@@ -21,3 +21,9 @@ conda env list
 source activate iaEnv
 jupyter notebook // Alli puedes crear una carpeta q aloje todos tus notebooks
 source desactivate // Para desactivar el ambiente
+
+
+#Instalar paquetes en un ambienyr
+source activate iaEnv
+conda install -c conda-forge tensorflow 
+
