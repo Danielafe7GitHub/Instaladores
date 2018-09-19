@@ -23,7 +23,17 @@ jupyter notebook // Alli puedes crear una carpeta q aloje todos tus notebooks
 source desactivate // Para desactivar el ambiente
 
 
-#Instalar paquetes en un ambienyr
-source activate iaEnv
-conda install -c conda-forge tensorflow 
+#Instalar paquetes en un ambiente
+#Ve que ese link sea para tu versión de python Ejem python 3.6
+pip install --ignore-installed --upgrade https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.10.1-cp36-cp36m-linux_x86_64.whl
+
+#Instaldo tensorflow hay que reinstalar jupyter notebook
+pip install --ignore-installed ipython
+pip install --ignore-installed jupyter
+
+
+#En ese mismo ambiente instalamos NLTK
+conda install -c anaconda nltk
+
+
 
