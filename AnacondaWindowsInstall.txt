@@ -24,9 +24,9 @@ Instalamos .... Marcamos SI en add path como en el video
 Abrimos anaconda
 Creamo un ambiente
 abrimo CMD
-conda creare --name Ia
+conda create --name Ia
 conda activate Ia
-//Te aparecer· algo asi:
+//Te aparecer√° algo asi:
 (Ia)
 En anaconda escogemos el ambiente Ia
 Instalamos (Juoyter lab : q instala notebook) y Abrimos jupyter notebook 
@@ -34,11 +34,12 @@ Para instalar paquetes:
 Dentro del ambiente
 conda install numpy
 conda install matplotlib
+conda install tensorflow
 
 
 
 //Por ejemplo, tenemos un ambiente aparte para el musicalizador
-ReciÈn allÌ instalamos NLTK
+Reci√©n all√≠ instalamos NLTK
 conda activate NRC
 conda install -c anaconda nltk 
 
