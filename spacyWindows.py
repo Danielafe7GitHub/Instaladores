@@ -2,7 +2,8 @@ Crear un ambiente virtual en conda
 #En mi caso fue en u ambiente ya con NLTK
 conda install tqdm
 conda install -c spacy spacy 
-
+#Si no func ... usar esteee de ACÁ!!!!!!
+conda install -c conda-forge spacy
 #Este paso debe hacer con permiso de administrador 
 #Con cmder :
 #1: Win + Alt + p y allí seleccionas run as administrator
