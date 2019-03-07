@@ -6,11 +6,11 @@ conda install -c spacy spacy
 #Este paso debe hacer con permiso de administrador 
 #Con cmder :
 #1: Win + Alt + p y allí seleccionas run as administrator
-#HAY QUE volver a cargar el ambiente en la nueva terminal
-conda activate Nombre 
-#2 abres otro tipo de consola : Shift + Alt + 1
-python -m spacy download en
 
+#2 abres otro tipo de consola : Shift + Alt + 1 ...aqui NO conda activate NOmbre
+python -m spacy download en
+#HAY QUE volver a cargar el ambiente en la nueva terminal .. AQUÍ SIII
+conda activate Nombre 
 #walá!!! is done.
 
 Fuentes:
