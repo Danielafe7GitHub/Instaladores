@@ -1,0 +1,8 @@
+Para instalar Graphviz en Windows y usar el Layaput de dot 
+https://www.youtube.com/watch?v=JYAHwQ_tMG0
+
+Para exportar imágenes a png 
+
+dot -Tpng -Gsize=15,15\! -Gdpi=1000 PeterGrafo4.txt -o PP4.png
+
+A más Gdpi más calidad
