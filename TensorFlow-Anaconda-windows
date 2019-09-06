@@ -1,0 +1,6 @@
+Fuente: https://www.youtube.com/watch?v=SNdQqYpfCV4
+
+En conda:
+Crear ambiente com python 3.6 #Muy importante > , no funciona
+conda install tensorflow
+conda install matplotlib
